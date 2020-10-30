@@ -14,27 +14,7 @@ var status_header = document.getElementById('status-header')
 client.on('connect', function () {
     status_header.innerHTML = 'Connected to '+broker; 
     console.log('Connected to '+broker)
-    client.subscribe('junrey/messages', function (err) {
-        if (!err) {
-            client.publish('junrey/messages', 'Hello mqtt')
-        }
-    })
 })
-
-// client.on('message', function (topic, message) {
-//   // message is Buffer
-//   console.log(message.toString())
-// //   client.end()
-// })
-
-// var pub_button = document.getElementById('pub-button');
-// var pub_input = document.getElementById('pub-input');
-// pub_button.addEventListener('click', () => {
-//   // console.log('clicked');
-//   // console.log(pub_input.value);
-//   client.publish('junrey/messages', pub_input.value)
-//   pub_input.value = "";
-// })
 
 var pub_switch = document.getElementById('pub-switch');
 pub_switch.onclick = () => {
